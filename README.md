@@ -3,7 +3,7 @@
 Faithful implementation of the original U-Net architecture with weight maps, elastic deformation, and full training pipeline — based on the 2015 paper.
 
 This project is a deep, from-scratch reimplementation of the original **U-Net: Convolutional Networks for Biomedical Image Segmentation** paper (Ronneberger et al., 2015).  
-The implementation is divided into beginner-friendly Kaggle notebooks, each dedicated to a core component of the original architecture and training setup — **no shortcuts, no black boxes**.
+The implementation is divided into beginner-friendly **Kaggle notebooks**, each dedicated to a core component of the original architecture and training setup — **no shortcuts, no black boxes**.
 
 > 📌 This repository serves as a landing page to the full notebook series and highlights what makes this implementation faithful to the original work.
 
@@ -41,9 +41,9 @@ The implementation is divided into beginner-friendly Kaggle notebooks, each dedi
 
 ## 🛠 Technologies Used
 
-- Python · Keras · NumPy · TensorFlow · Matplotlib
-- Kaggle Notebooks for training and visualization
-- Open-source datasets (e.g., ISBI, Cell Nuclei)
+- Python · TensorFlow · Keras · NumPy · SciPy (`scipy.ndimage`) · Matplotlib
+- Kaggle Notebooks for training and TPU execution
+- Open-source biomedical datasets (e.g., ISBI, Cell Nuclei)
 
 ---
 
