@@ -14,12 +14,12 @@ The implementation is divided into beginner-friendly Kaggle notebooks, each dedi
 
 | Part | Description | Link |
 |------|-------------|------|
-| Part 1 | U-Net Architecture from Scratch | [🔗 Notebook](https://www.kaggle.com/yourname/unet-architecture) |
-| Part 2 | Elastic Deformation & Augmentation | [🔗 Notebook](https://www.kaggle.com/yourname/unet-augmentation) |
-| Part 3 | Weight Map Generation | [🔗 Notebook](https://www.kaggle.com/yourname/unet-weight-maps) |
-| Part 4 | Dataset Preparation | [🔗 Notebook](https://www.kaggle.com/yourname/unet-data-preparation) |
-| Part 5 | Training Loop & Results | [🔗 Notebook](https://www.kaggle.com/yourname/unet-training) |
-| Bonus | Elastic Deformation Explained in Depth | [🔗 Notebook](https://www.kaggle.com/yourname/elastic-deformation-explained) |
+| Part 1 | U-Net Architecture from Scratch | [🔗 Notebook](https://www.kaggle.com/code/hamzamohiuddin/u-net-implementation-part-1-updated) |
+| Part 2 | Elastic Deformation & Augmentation | [🔗 Notebook](https://www.kaggle.com/code/hamzamohiuddin/u-net-implementation-part-2) |
+| Part 3 | Weight Map Generation | [🔗 Notebook](https://www.kaggle.com/code/hamzamohiuddin/u-net-implementation-part3/) |
+| Part 4 | Dataset Preparation | [🔗 Notebook](https://www.kaggle.com/code/hamzamohiuddin/u-net-implementation-part-4/) |
+| Part 5 | Training Loop & Results | [🔗 Notebook](https://www.kaggle.com/code/hamzamohiuddin/u-net-implementation-part-5) |
+| Bonus | Elastic Deformation Explained in Depth | [🔗 Notebook](https://www.kaggle.com/code/hamzamohiuddin/elastic-deformation-detailed-explained) |
 
 > 📌 Each notebook is structured, well-commented, and designed to be accessible for learners and reproducible for practitioners.
 
@@ -27,18 +27,22 @@ The implementation is divided into beginner-friendly Kaggle notebooks, each dedi
 
 ## 💡 What Makes This Different?
 
-- ✅ Full U-Net architecture built **from scratch**
-- ✅ Implements **elastic deformation** exactly as described in the original paper
-- ✅ Includes **pixel-wise weight map generation** for class imbalance
-- ✅ Clean separation of components: architecture, augmentation, data, training
-- ✅ Uses publicly available biomedical segmentation datasets
-- ✅ Reproducible and beginner-friendly
+- ✅ Full U-Net architecture built **from scratch**, exactly as described in the original paper
+- ✅ Implements **elastic deformation** using custom displacement fields and Gaussian smoothing
+- ✅ Includes **pixel-wise weight map generation** to emphasize borders and handle class imbalance
+- ✅ Reproducible **data preparation pipeline**: train/validation split, augmentation, and TFRecord generation
+- ✅ Trains on **25,000+ augmented images using Kaggle TPUs** for massive speedup (TPU-VM v3-8)
+- ✅ Covers **learning rate scheduling, callbacks, and checkpointing** in training
+- ✅ Clean modular split: architecture · augmentation · weight maps · data prep · training
+- ✅ Uses **public biomedical datasets** (e.g. ISBI-style microscopy)
+- ✅ Beginner-friendly walkthroughs — with motivation, visualizations, and linked components
+
 
 ---
 
 ## 🛠 Technologies Used
 
-- Python · Keras · NumPy · OpenCV · Matplotlib
+- Python · Keras · NumPy · TensorFlow · Matplotlib
 - Kaggle Notebooks for training and visualization
 - Open-source datasets (e.g., ISBI, Cell Nuclei)
 
