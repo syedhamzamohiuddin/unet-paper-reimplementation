@@ -39,6 +39,22 @@ The implementation is divided into beginner-friendly **Kaggle notebooks**, each 
 
 ---
 
+## ⚠️ Faithful to the Paper: What's Usually Done Wrong
+
+Most public implementations deviate from the original U-Net architecture in key ways.  
+This project avoids those shortcuts and follows the design described in the 2015 paper:
+
+- ❌ Uses `padding='same'` in conv layers  
+  ✅ Uses **valid convolutions** with **manual input mirroring and padding**
+- ❌ Relies on automatic spatial alignment  
+  ✅ Handles explicit **cropping** and **tensor shape management** between encoder and decoder
+- ❌ Skips weight maps  
+  ✅ Includes full **pixel-wise weighting** to emphasize border regions
+
+This project prioritizes architectural fidelity — not convenience.
+
+---
+
 ## 🛠 Technologies Used
 
 - Python · TensorFlow · Keras · NumPy · SciPy (`scipy.ndimage`) · Matplotlib
