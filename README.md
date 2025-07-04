@@ -39,19 +39,22 @@ The implementation is divided into beginner-friendly **Kaggle notebooks**, each 
 
 ---
 
+
 ## ⚠️ Faithful to the Paper: What's Usually Done Wrong
 
-Most public implementations deviate from the original U-Net architecture in key ways.  
-This project avoids those shortcuts and follows the design described in the 2015 paper:
+Most public U-Net implementations deviate from the original 2015 paper in critical ways.  
+This project avoids those shortcuts and replicates the original design as closely as possible:
 
 - ❌ Uses `padding='same'` in conv layers  
-  ✅ Uses **valid convolutions** with **manual input mirroring and padding**
-- ❌ Relies on automatic spatial alignment  
-  ✅ Handles explicit **cropping** and **tensor shape management** between encoder and decoder
-- ❌ Skips weight maps  
-  ✅ Includes full **pixel-wise weighting** to emphasize border regions
+  ✅ Uses **valid convolutions** with **manual input mirroring and padding** to preserve spatial structure
+- ❌ Assumes auto-alignment of encoder–decoder paths  
+  ✅ Performs **explicit cropping** to align encoder feature maps during concatenation
+- ❌ Skips weight maps entirely  
+  ✅ Includes **pixel-wise weight map generation** to emphasize border regions (as per the paper)
+- ❌ Ignores elastic deformation  
+  ✅ Implements **elastic deformation from scratch** using `scipy.ndimage`, matching the paper's core augmentation strategy for biomedical images
 
-This project prioritizes architectural fidelity — not convenience.
+📌 This implementation is not just functional — it’s pedagogically faithful to the original U-Net design. If you're comparing U-Net repos, this one aims to teach *why* each detail matters.
 
 ---
 
